@@ -1,4 +1,4 @@
-CourseATF
-=========
+TemperatureConverter
+====================
 
-exercise android project: TemperatureConverter
+Temporary repository for android testing framework course
