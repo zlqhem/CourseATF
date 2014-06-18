@@ -138,7 +138,6 @@ public class TemperatureConverterActivityTests extends
     }
 
     public void testFahrenheitToCelsiusConversion_text() throws Throwable {
-    	/*
         final double f = 32.5;
         runTestOnUiThread(new Runnable() {
 
@@ -156,11 +155,9 @@ public class TemperatureConverterActivityTests extends
         final double actual = mCelsius.getNumber();
         final double delta = Math.abs(expected - actual);
         assertTrue("delta=" + delta + " expected=" + expected + " actual=" + actual, delta < 0.005);
-        */
     }
 
     public void testCelsiusToFahrenheitConversion_text() throws Throwable {
-    	/*
         final double c = 100;
         runTestOnUiThread(new Runnable() {
 
@@ -194,13 +191,12 @@ public class TemperatureConverterActivityTests extends
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
-                assertEquals(c, mActivity.getFahrenheit());
+                //assertEquals(c, mActivity.getFahrenheit());
                 final double delta = Math.abs(expected - actual);
                 assertTrue("delta=" + delta + " expected=" + expected + " actual=" + actual,
                         delta < 0.005);
             }
         });
-        */
     }
 
     @UiThreadTest
