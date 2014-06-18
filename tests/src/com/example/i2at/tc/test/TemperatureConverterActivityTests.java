@@ -105,8 +105,8 @@ public class TemperatureConverterActivityTests extends
     
     @UiThreadTest
     public void testFahrenheitToCelsiusConversion() {
-    	/* TODO 5-1: �븯�굹�쓽 field �뿉 媛믪쓣 �엯�젰�븯硫�, �떎瑜�  field �뿉 �빐�떦 媛믪씠 �떎�떆媛꾩쑝濡� 蹂��솚�릺�뼱�빞 �븿
-        mCelsius.clear();
+    	
+    	mCelsius.clear();
         mFahrenheit.clear();
         final double f = 32.5;
         assertTrue(mFahrenheit.requestFocus());
@@ -115,31 +115,26 @@ public class TemperatureConverterActivityTests extends
         assertTrue(mCelsius.requestFocus());
         assertTrue(mCelsius.isFocused());
         
-        final double expected; // COMPLETE 
-        final double actual; // COMPLETE
+        final double expected = 0.277; // COMPLETE 
+        final double actual = mCelsius.getNumber();// COMPLETE
         final double delta = Math.abs(expected - actual);
         assertTrue("delta=" + delta + " expected=" + expected + " actual=" + actual, delta < 0.005);
-        */
-    	assertTrue(true);
     }
 
     @UiThreadTest
     public void testCelsiusToFahrenheitConversion() {
-    	/* TODO 5-2: �븯�굹�쓽 field �뿉 媛믪쓣 �엯�젰�븯硫�, �떎瑜�  field �뿉 �빐�떦 媛믪씠 �떎�떆媛꾩쑝濡� 蹂��솚�릺�뼱�빞 �븿
-        mCelsius.clear();
+    	mCelsius.clear();
         mFahrenheit.clear();
-        final double c = 100;
+        final double c = 0.2777;
         assertTrue(mCelsius.requestFocus());
         mCelsius.setNumber(c);
         assertEquals(c, mCelsius.getNumber());
         assertTrue(mFahrenheit.requestFocus());
         assertTrue(mFahrenheit.isFocused());
-        final double expected; // COMEPLETE
-        final double actual; // COMPLETE
+        final double expected = 32.5;// COMEPLETE
+        final double actual = mFahrenheit.getNumber(); // COMPLETE
         final double delta = Math.abs(expected - actual);
         assertTrue("delta=" + delta + " expected=" + expected + " actual=" + actual, delta < 0.005);
-        */
-    	assertTrue(true);
     }
 
     public void testFahrenheitToCelsiusConversion_text() throws Throwable {
