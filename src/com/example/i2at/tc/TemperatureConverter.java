@@ -11,12 +11,13 @@ public class TemperatureConverter {
 	private TemperatureConverter() {
 		// do nothing
 	}
+
 	public static double fahrenheitToCelsius(double f) {
-		return 0.27777;
+		return Math.round(100.0 * (f - 32) / 1.8) / 100.0;
 	}
 
 	public static double celsiusToFahrenheit(double c) {
-		return 32.5;
+		return Math.round(100.0 * (c * 1.8 + 32)) / 100.0;
 	}
 
 }
