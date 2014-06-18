@@ -70,33 +70,35 @@ public class TemperatureConverterActivityTests extends
     	final View origin = mActivity.getWindow().getDecorView();
     	ViewAsserts.assertOnScreen(origin, mCelsius);
     	ViewAsserts.assertOnScreen(origin, mFahrenheit);
-        /* TODO #2. 섭씨온도를 입력 받는 field 와 화씨온도를 입력받는 field 가 하나씩 존재함
+        /* TODO #2. �꽠�뵪�삩�룄瑜� �엯�젰 諛쏅뒗 field �� �솕�뵪�삩�룄瑜� �엯�젰諛쏅뒗 field 媛� �븯�굹�뵫 議댁옱�븿
          * Hint: assertOnScreen  
          */
     }
 
     @SmallTest
     public void testFieldsShouldStartEmpty() {
-    	/* TODO #1. 최소 실행 시 각 field 는 비워져 있어야 함
+    	/* TODO #1. 理쒖냼 �떎�뻾 �떆 媛� field �뒗 鍮꾩썙�졇 �엳�뼱�빞 �븿
     	 * 	 field : mCelsius, mFahrenheit
     	 */
+    	assertTrue("".equals(mCelsius.getText().toString()));
+    	assertTrue("".equals(mFahrenheit.getText().toString())); 
     }
 
     @SmallTest
     public void testJustification() {
-        /* TODO 3: 숫자는 오른쪽 정렬로 되어야 하고 수직 중앙 정렬되어야 함
+        /* TODO 3: �닽�옄�뒗 �삤瑜몄そ �젙�젹濡� �릺�뼱�빞 �븯怨� �닔吏� 以묒븰 �젙�젹�릺�뼱�빞 �븿
          * Hint:  EditText.getGravity()
          */
     }
 
     @SmallTest
     public void testVirtualKeyboardSpaceReserved() {
-        /* TODO 4: 키보드가 올아올 예비 공간을 Application 상 에서 미리 확보해야 함. */
+        /* TODO 4: �궎蹂대뱶媛� �삱�븘�삱 �삁鍮� 怨듦컙�쓣 Application �긽 �뿉�꽌 誘몃━ �솗蹂댄빐�빞 �븿. */
     }
     
     @UiThreadTest
     public void testFahrenheitToCelsiusConversion() {
-    	/* TODO 5-1: 하나의 field 에 값을 입력하면, 다른  field 에 해당 값이 실시간으로 변환되어야 함
+    	/* TODO 5-1: �븯�굹�쓽 field �뿉 媛믪쓣 �엯�젰�븯硫�, �떎瑜�  field �뿉 �빐�떦 媛믪씠 �떎�떆媛꾩쑝濡� 蹂��솚�릺�뼱�빞 �븿
         mCelsius.clear();
         mFahrenheit.clear();
         final double f = 32.5;
@@ -116,7 +118,7 @@ public class TemperatureConverterActivityTests extends
 
     @UiThreadTest
     public void testCelsiusToFahrenheitConversion() {
-    	/* TODO 5-2: 하나의 field 에 값을 입력하면, 다른  field 에 해당 값이 실시간으로 변환되어야 함
+    	/* TODO 5-2: �븯�굹�쓽 field �뿉 媛믪쓣 �엯�젰�븯硫�, �떎瑜�  field �뿉 �빐�떦 媛믪씠 �떎�떆媛꾩쑝濡� 蹂��솚�릺�뼱�빞 �븿
         mCelsius.clear();
         mFahrenheit.clear();
         final double c = 100;

@@ -17,7 +17,6 @@
 
 	<com.example.i2at.tc.EditNumber
 	    android:id="@+id/celsius"
-	    android:text="@+id/EditText01"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:contentDescription="celsius"
@@ -33,7 +32,6 @@
 
 	<com.example.i2at.tc.EditNumber
 	    android:id="@+id/fahrenheit"
-	    android:text="@+id/EditText02"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:contentDescription="fahrenheit"
