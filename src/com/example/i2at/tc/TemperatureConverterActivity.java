@@ -154,9 +154,11 @@ public class TemperatureConverterActivity extends Activity {
         mCelsius = (EditNumber) findViewById(R.id.celsius);
         mFahrenheit = (EditNumber) findViewById(R.id.fahrenheit);
         
+        //[ADD] Kelly.seo//////////////////////////////////////////////////////////////////////////////////////
         mCelsius.setText("");
         mFahrenheit.setText("");
-
+        //[END] Kelly.seo//////////////////////////////////////////////////////////////////////////////////////
+        
         mCelsius.addTextChangedListener(new TemperatureChangeWatcher(mCelsius, mFahrenheit) {
 
             @Override
