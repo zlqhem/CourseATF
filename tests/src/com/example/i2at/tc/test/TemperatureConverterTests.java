@@ -6,6 +6,7 @@ package com.example.i2at.tc.test;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
+import java.util.Set;
 
 import com.example.i2at.tc.TemperatureConverter;
 
@@ -58,6 +59,19 @@ public class TemperatureConverterTests extends TestCase {
 		/* TODO 6: 섭씨온도와 화씨온도를 서로 변환할 수 있어야 함. (기대 값의 허용오차는 0.005 로 가정)
 		 * 미리 준비 된 변환 테이블을 참조하여 작성(sConversionTableDouble)
 		 */
+		Set<Double> keyset = sConversionTableDouble.keySet();
+		Object[] hashkeys = keyset.toArray();
+	
+		for(int i=0;i<hashkeys.length;i++){
+			double c = (Double)hashkeys[i];
+			double f = (double)sConversionTableDouble.get(c);
+			
+			double expected = c;
+			double actual = TemperatureConverter.fahrenheitToCelsius(f);
+			
+			assertTrue("expected: " + expected + ", actual: " + actual,
+					Math.abs(expected - actual) <= 0.005);
+		}
 	}
 
 	/**
@@ -67,6 +81,19 @@ public class TemperatureConverterTests extends TestCase {
 		/* TODO 6: 섭씨온도와 화씨온도를 서로 변환할 수 있어야 함. (기대 값의 허용오차는 0.005 로 가정)
 		 * 미리 준비 된 변환 테이블을 참조하여 작성(sConversionTableDouble)
 		 */		
+		Set<Double> keyset = sConversionTableDouble.keySet();
+		Object[] hashkeys = keyset.toArray();
+	
+		for(int i=0;i<hashkeys.length;i++){
+			double c = (Double)hashkeys[i];
+			double f = (double)sConversionTableDouble.get(c);
+			
+			double expected = f;
+			double actual = TemperatureConverter.celsiusToFahrenheit(c);
+			
+			assertTrue("expected: " + expected + ", actual: " + actual,
+					Math.abs(expected - actual) <= 0.005);
+		}
 	}
 	
 	public final void testExceptionForLessThanAbsoluteZeroF() {
