@@ -89,8 +89,8 @@ public class TemperatureConverterActivityTests extends
         /* TODO 3: �닽�옄�뒗 �삤瑜몄そ �젙�젹濡� �릺�뼱�빞 �븯怨� �닔吏� 以묒븰 �젙�젹�릺�뼱�빞 �븿
          * Hint:  EditText.getGravity()
          */
-    	assertEquals(Gravity.RIGHT, mCelsius.getGravity());
-    	assertEquals(Gravity.RIGHT, mFahrenheit.getGravity());
+    	assertEquals(Gravity.RIGHT|Gravity.CENTER_VERTICAL, mCelsius.getGravity());
+    	assertEquals(Gravity.RIGHT|Gravity.CENTER_VERTICAL, mFahrenheit.getGravity());
     }
 
     @SmallTest
