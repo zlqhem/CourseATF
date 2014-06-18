@@ -85,6 +85,7 @@ public class TemperatureConverterActivity extends Activity {
                         + parsedNumber + "}");
                 // TODO: complete this method.
                 // Hint: use abstract method 'convert' and EditNumber.setNumber
+                mDest.setNumber(convert(parsedNumber));
                 
             } catch (NumberFormatException e) {
                 // WARNING:
@@ -130,9 +131,11 @@ public class TemperatureConverterActivity extends Activity {
             
             if (dest == mCelsius && ! Double.isNaN(f)) {
             	// TODO: complete this method. Use setNumber of EditNumber method
+            	mCelsius.setNumber(TemperatureConverter.fahrenheitToCelsius(f));
             }
             else if (dest == mFahrenheit && !Double.isNaN(c)) {
             	// TODO: complete this method. Use setNumber of EditNumber method
+            	mFahrenheit.setNumber(TemperatureConverter.celsiusToFahrenheit(c));
             }
         }
     };
