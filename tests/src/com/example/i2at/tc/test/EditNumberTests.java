@@ -3,6 +3,9 @@
  */
 package com.example.i2at.tc.test;
 
+import java.util.HashMap;
+import java.util.Iterator;
+
 import com.example.i2at.tc.EditNumber;
 
 import android.test.AndroidTestCase;
@@ -63,12 +66,35 @@ public class EditNumberTests extends AndroidTestCase {
 		final String actual = mEditNumber.getText().toString();
 		assertEquals(expected, actual);
 	}
-
+	private static final HashMap<String, String> sConversionTableString =
+			new HashMap<String, String>();
+	
+	static {
+		sConversionTableString.put("0.0", "0.0");
+		sConversionTableString.put("100.1234", "100.xx");
+		sConversionTableString.put("-1.0", "-1.0");
+		sConversionTableString.put("0.009", "0.01");
+		sConversionTableString.put("-0.009", "-0.01");
+		sConversionTableString.put("-0.001", "0.0");
+	}
 	/**
 	 * Test method for {@link com.example.i2at.tc.EditNumber#setNumber(double)}.
 	 */
 	public final void testSetNumber() {
 		/* TODO 8: 값은 10진수로 소수점 둘째 자리까지 표현되어야 함 */
+
+		Iterator<String> itr = sConversionTableString.keySet().iterator();
+		while (itr.hasNext()) {
+			String srcText = itr.next();
+			String expected = sConversionTableString.get(srcText);
+
+			mEditNumber.setNumber(Double.valueOf(srcText));
+			String actual = mEditNumber.getText().toString();
+
+			assertTrue("src: " + srcText + ", expected: " + expected
+					+ ", actual: " + actual,
+					actual.length() == expected.length());
+		}
 	}
 
 	/**
