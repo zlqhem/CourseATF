@@ -10,6 +10,7 @@ import android.test.UiThreadTest;
 import android.test.ViewAsserts;
 import android.test.suitebuilder.annotation.SmallTest;
 import android.test.suitebuilder.annotation.Suppress;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -88,8 +89,8 @@ public class TemperatureConverterActivityTests extends
         /* TODO 3: �レ옄���ㅻⅨ履��뺣젹濡��섏뼱���섍퀬 �섏쭅 以묒븰 �뺣젹�섏뼱����
          * Hint:  EditText.getGravity()
          */
-    	assertSame(0x05, mCelsius.getGravity());
-    	assertSame(0x05, mFahrenheit.getGravity());
+    	assertSame((Gravity.RIGHT | Gravity.CENTER_VERTICAL), mCelsius.getGravity());
+    	assertSame((Gravity.RIGHT | Gravity.CENTER_VERTICAL), mFahrenheit.getGravity());
     }
 
     @SmallTest
