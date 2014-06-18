@@ -6,6 +6,7 @@ package com.example.i2at.tc.test;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
+import java.util.Iterator;
 
 import com.example.i2at.tc.TemperatureConverter;
 
@@ -29,6 +30,8 @@ public class TemperatureConverterTests extends TestCase {
 		sConversionTableDouble.put(-40.0, -40.0);
 		sConversionTableDouble.put(-273.0, -459.40);
 	}
+	
+	TemperatureConverter m_Tc;
 
 	/**
 	 * @param name
@@ -55,26 +58,38 @@ public class TemperatureConverterTests extends TestCase {
 	 * Test method for {@link com.example.i2at.tc.TemperatureConverter#fahrenheitToCelsius(double)}.
 	 */
 	public void testFahrenheitToCelsius() {
-		/* TODO 6: 섭씨온도와 화씨온도를 서로 변환할 수 있어야 함. (기대 값의 허용오차는 0.005 로 가정)
-		 * 미리 준비 된 변환 테이블을 참조하여 작성(sConversionTableDouble)
+		/* TODO 6: ��뵪�⑤룄���붿뵪�⑤룄瑜��쒕줈 蹂�솚�����덉뼱���� (湲곕� 媛믪쓽 �덉슜�ㅼ감��0.005 濡�媛�젙)
+		 * 誘몃━ 以�퉬 ��蹂�솚 �뚯씠釉붿쓣 李몄“�섏뿬 �묒꽦(sConversionTableDouble)
 		 */
+		Iterator itr = sConversionTableDouble.keySet().iterator();
+		while(itr.hasNext()){
+			double c = (Double)itr.next();
+			double f = sConversionTableDouble.get(c);
+			assertEquals(c, m_Tc.fahrenheitToCelsius(f));
+		}
 	}
 
 	/**
 	 * Test method for {@link com.example.i2at.tc.TemperatureConverter#fahrenheitToCelsius(double)}.
 	 */
 	public void testCelsiusToFahrenheit() {
-		/* TODO 6: 섭씨온도와 화씨온도를 서로 변환할 수 있어야 함. (기대 값의 허용오차는 0.005 로 가정)
-		 * 미리 준비 된 변환 테이블을 참조하여 작성(sConversionTableDouble)
-		 */		
+		/* TODO 6: ��뵪�⑤룄���붿뵪�⑤룄瑜��쒕줈 蹂�솚�����덉뼱���� (湲곕� 媛믪쓽 �덉슜�ㅼ감��0.005 濡�媛�젙)
+		 * 誘몃━ 以�퉬 ��蹂�솚 �뚯씠釉붿쓣 李몄“�섏뿬 �묒꽦(sConversionTableDouble)
+		 */	
+		Iterator itr = sConversionTableDouble.keySet().iterator();
+		while(itr.hasNext()){
+			double c = (Double)itr.next();
+			double f = sConversionTableDouble.get(c);
+			assertEquals(f, m_Tc.celsiusToFahrenheit(c));
+		}
 	}
 	
 	public final void testExceptionForLessThanAbsoluteZeroF() {
-		/* TODO 7: 값에 오류가 발생했을 때 동일한 field 에 표현되어야 함 */	
+		/* TODO 7: 媛믪뿉 �ㅻ쪟媛�諛쒖깮�덉쓣 ���숈씪��field ���쒗쁽�섏뼱����*/	
 	}
 	
 	public final void testExceptionForLessThanAbsoluteZeroC() {
-		/* TODO 7: 값에 오류가 발생했을 때 동일한 field 에 표현되어야 함 */	
+		/* TODO 7: 媛믪뿉 �ㅻ쪟媛�諛쒖깮�덉쓣 ���숈씪��field ���쒗쁽�섏뼱����*/	
 	}
 	
 	public final void testPrivateConstructor() throws SecurityException, NoSuchMethodException,
