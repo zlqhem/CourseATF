@@ -45,8 +45,9 @@ public class EditNumber extends EditText {
 	}
 
 	public void setNumber(double f) {
-		android.util.Log.d("setNumber", "setting f=" + f + " => " + Double.toString(f));
-		setText(Double.toString(f));
+		double rf = Math.round(f*100.0)/100.0;
+		android.util.Log.d("setNumber", "setting f=" + f + " => " + Double.toString(rf));
+		setText(Double.toString(rf));
 	}
 
 	public double getNumber() {
