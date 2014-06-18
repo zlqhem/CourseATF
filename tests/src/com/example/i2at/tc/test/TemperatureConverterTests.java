@@ -57,7 +57,7 @@ public class TemperatureConverterTests extends TestCase {
 	 */
 	public void testFahrenheitToCelsius() {
 		/* TODO 6: 섭씨온도와 화씨온도를 서로 변환할 수 있어야 함. (기대 값의 허용오차는 0.005 로 가정)
-		 * 미리 준비 된 변환 테이블을 참조하여 작성(sConversionTableDouble)
+		 * 미리 준비 된 변환 테이블을 참조하여 작성(sConvIterator<E>bleDouble)
 		 */
 		Set<Double> keyset = sConversionTableDouble.keySet();
 		Object[] hashkeys = keyset.toArray();
