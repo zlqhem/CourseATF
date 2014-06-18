@@ -68,7 +68,12 @@ public class EditNumberTests extends AndroidTestCase {
 	 * Test method for {@link com.example.i2at.tc.EditNumber#setNumber(double)}.
 	 */
 	public final void testSetNumber() {
-		/* TODO 8: 값은 10진수로 소수점 둘째 자리까지 표현되어야 함 */
+		/* TODO 8: 媛믪� 10吏꾩닔濡� �냼�닔�젏 �몮吏� �옄由ш퉴吏� �몴�쁽�릺�뼱�빞 �븿 */
+		final double d = 123.456;
+		mEditNumber.setNumber(d);
+		final String expected = "123.46";
+		final String actual = mEditNumber.getText().toString();
+		assertEquals(expected, actual);		
 	}
 
 	/**
