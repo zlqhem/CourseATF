@@ -55,26 +55,47 @@ public class TemperatureConverterTests extends TestCase {
 	 * Test method for {@link com.example.i2at.tc.TemperatureConverter#fahrenheitToCelsius(double)}.
 	 */
 	public void testFahrenheitToCelsius() {
-		/* TODO 6: 섭씨온도와 화씨온도를 서로 변환할 수 있어야 함. (기대 값의 허용오차는 0.005 로 가정)
-		 * 미리 준비 된 변환 테이블을 참조하여 작성(sConversionTableDouble)
+		/* TODO 6: ��뵪�⑤룄���붿뵪�⑤룄瑜��쒕줈 蹂�솚�����덉뼱���� (湲곕� 媛믪쓽 �덉슜�ㅼ감��0.005 濡�媛�젙)
+		 * 誘몃━ 以�퉬 ��蹂�솚 �뚯씠釉붿쓣 李몄“�섏뿬 �묒꽦(sConversionTableDouble)
 		 */
+		double expected;
+		double actual;
+		double delta;
+		
+		for(double key : sConversionTableDouble.keySet()) {
+			double values = sConversionTableDouble.get(key);
+			expected = key;
+			actual = TemperatureConverter.fahrenheitToCelsius(values);
+			delta = Math.abs(expected - actual);
+			assertTrue("delta=" + delta + " expected=" + expected + " actual=" + actual, delta < 0.005);
+		}
 	}
 
 	/**
 	 * Test method for {@link com.example.i2at.tc.TemperatureConverter#fahrenheitToCelsius(double)}.
 	 */
 	public void testCelsiusToFahrenheit() {
-		/* TODO 6: 섭씨온도와 화씨온도를 서로 변환할 수 있어야 함. (기대 값의 허용오차는 0.005 로 가정)
-		 * 미리 준비 된 변환 테이블을 참조하여 작성(sConversionTableDouble)
+		/* TODO 6: ��뵪�⑤룄���붿뵪�⑤룄瑜��쒕줈 蹂�솚�����덉뼱���� (湲곕� 媛믪쓽 �덉슜�ㅼ감��0.005 濡�媛�젙)
+		 * 誘몃━ 以�퉬 ��蹂�솚 �뚯씠釉붿쓣 李몄“�섏뿬 �묒꽦(sConversionTableDouble)
 		 */		
+		double expected;
+		double actual;
+		double delta;
+		
+		for(double key : sConversionTableDouble.keySet()) {
+			expected = sConversionTableDouble.get(key);
+			actual = TemperatureConverter.celsiusToFahrenheit(key);
+			delta = Math.abs(expected - actual);
+			assertTrue("delta=" + delta + " expected=" + expected + " actual=" + actual, delta < 0.005);
+		}
 	}
 	
 	public final void testExceptionForLessThanAbsoluteZeroF() {
-		/* TODO 7: 값에 오류가 발생했을 때 동일한 field 에 표현되어야 함 */	
+		/* TODO 7: 媛믪뿉 �ㅻ쪟媛�諛쒖깮�덉쓣 ���숈씪��field ���쒗쁽�섏뼱����*/	
 	}
 	
 	public final void testExceptionForLessThanAbsoluteZeroC() {
-		/* TODO 7: 값에 오류가 발생했을 때 동일한 field 에 표현되어야 함 */	
+		/* TODO 7: 媛믪뿉 �ㅻ쪟媛�諛쒖깮�덉쓣 ���숈씪��field ���쒗쁽�섏뼱����*/	
 	}
 	
 	public final void testPrivateConstructor() throws SecurityException, NoSuchMethodException,
