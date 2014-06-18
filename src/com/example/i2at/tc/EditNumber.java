@@ -13,6 +13,8 @@ import android.widget.EditText;
  */
 public class EditNumber extends EditText {
 
+	private static final String DEFAULT_FORMAT = "%.2f";
+	private String mFormat = DEFAULT_FORMAT;
 	/**
 	 * @param context
 	 */
@@ -46,7 +48,7 @@ public class EditNumber extends EditText {
 
 	public void setNumber(double f) {
 		android.util.Log.d("setNumber", "setting f=" + f + " => " + Double.toString(f));
-		setText(Double.toString(f));
+		super.setText(String.format(DEFAULT_FORMAT, f));
 	}
 
 	public double getNumber() {
