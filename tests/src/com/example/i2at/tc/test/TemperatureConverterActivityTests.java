@@ -125,7 +125,7 @@ public class TemperatureConverterActivityTests extends
     public void testCelsiusToFahrenheitConversion() {
     	mCelsius.clear();
         mFahrenheit.clear();
-        final double c = 0.2777;
+        final double c = 0.28;
         assertTrue(mCelsius.requestFocus());
         mCelsius.setNumber(c);
         assertEquals(c, mCelsius.getNumber());
