@@ -153,6 +153,9 @@ public class TemperatureConverterActivity extends Activity {
 
         mCelsius = (EditNumber) findViewById(R.id.celsius);
         mFahrenheit = (EditNumber) findViewById(R.id.fahrenheit);
+        
+        mCelsius.setText("");
+        mFahrenheit.setText("");
 
         mCelsius.addTextChangedListener(new TemperatureChangeWatcher(mCelsius, mFahrenheit) {
 
