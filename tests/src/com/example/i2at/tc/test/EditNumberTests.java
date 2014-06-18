@@ -76,6 +76,8 @@ public class EditNumberTests extends AndroidTestCase {
 		sConversionTableString.put("0.009", "0.01");
 		sConversionTableString.put("-0.009", "-0.01");
 		sConversionTableString.put("-0.001", "0.0");
+		sConversionTableString.put("-99", "-99.0");
+		sConversionTableString.put("123", "123.0");
 	}
 	/**
 	 * Test method for {@link com.example.i2at.tc.EditNumber#setNumber(double)}.
