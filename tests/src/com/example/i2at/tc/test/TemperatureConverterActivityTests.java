@@ -86,9 +86,16 @@ public class TemperatureConverterActivityTests extends
 
     @SmallTest
     public void testJustification() {
-        /* TODO 3: �닽�옄�뒗 �삤瑜몄そ �젙�젹濡� �릺�뼱�빞 �븯怨� �닔吏� 以묒븰 �젙�젹�릺�뼱�빞 �븿
-         * Hint:  EditText.getGravity()
-         */
+		/*
+		 * TODO 3: 숫자는 오른쪽 정렬로 되어야 하고 수직 중앙 정렬되어야 함 Hint: EditText.getGravity()
+		 */
+		assertEquals(Gravity.CENTER_VERTICAL, mCelsius.getGravity()
+				& Gravity.CENTER_VERTICAL);
+		assertEquals(Gravity.RIGHT, mCelsius.getGravity() & Gravity.RIGHT);
+
+		assertEquals(Gravity.CENTER_VERTICAL, mFahrenheit.getGravity()
+				& Gravity.CENTER_VERTICAL);
+		assertEquals(Gravity.RIGHT, mFahrenheit.getGravity() & Gravity.RIGHT);
     }
 
     @SmallTest
