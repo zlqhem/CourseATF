@@ -83,8 +83,9 @@ public class TemperatureConverterActivity extends Activity {
             	double parsedNumber = Double.parseDouble(str);
                 android.util.Log.v(TAG, "converting temp=" + str + "{"
                         + parsedNumber + "}");
-                // TODO: complete this method.
+                
                 // Hint: use abstract method 'convert' and EditNumber.setNumber
+                mDest.setNumber(convert(parsedNumber));
                 
             } catch (NumberFormatException e) {
                 // WARNING:
